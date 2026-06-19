@@ -13,8 +13,11 @@
   "type": "commonjs",
   "dependencies": {
     "express": "^5.2.1"
+<<<<<<< Updated upstream
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
+=======
+>>>>>>> Stashed changes
   }
 }
