@@ -1,9 +1,18 @@
-/* HEADER */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding-top: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 header{
     width: 100%;
     height: 80px;
-    background-color: rgba(0, 0, 0, 0.95);
+    background: #000;
     position: fixed;
     top: 0;
     left: 0;
@@ -11,46 +20,101 @@ header{
 }
 
 .content{
-    max-width: 1200px;
+    max-width: 1400px;
     height: 100%;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 40px;
 
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 40px;
 }
+
+/* LOGO */
 
 .logo{
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    flex: 1;
 }
 
 .logo img{
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
 }
 
 .logo h3{
     color: #fff;
-    font-size: 1.5rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    white-space: nowrap;
 }
+
+/* BUSCA */
+
+.search-box{
+    width: 320px;
+    height: 42px;
+    background: #363636;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.search-box input{
+    flex: 1;
+    height: 100%;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    font-size: 14px;
+
+    background: #363636;
+    color: #ffffff;
+}
+
+.search-box button{
+    width: 50px;
+    height: 100%;
+    border: none;
+    background: #ffcc00;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.search-box button:hover{
+    background: #e6b800;
+}
+
+/* MENU */
 
 .list-menu{
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    gap: 30px;
+    gap: 25px;
+
+    flex: 1;
+}
+
+.list-menu li{
+    list-style: none;
 }
 
 .list-menu li a{
-    color: white;
-    font-size: 1rem;
+    color: #fff;
+    font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
-    transition: 0.3s;
     position: relative;
+    transition: .3s;
+
+    white-space: nowrap;
 }
 
 .list-menu li a:hover{
@@ -64,7 +128,7 @@ header{
     bottom: -5px;
     width: 0;
     height: 2px;
-    background-color: #ffcc00;
+    background: #ffcc00;
     transition: .3s;
 }
 
