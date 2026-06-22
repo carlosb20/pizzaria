@@ -14,10 +14,9 @@ app.use(express.static("public"));
 
 
 
-app.get("/",(req,res)=>{
-
-    res.json(cardapio)
-} )
+app.get("/api/pizzas", (req, res) => {
+    res.json(cardapio);
+});
 
 const PORT = process.env.PORT || 3000;
 
