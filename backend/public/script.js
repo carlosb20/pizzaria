@@ -1,11 +1,12 @@
 
-const app = async() => {
+const app = async () => {
+    const resposta = await fetch(
+        "https://pizzaria-production-299a.up.railway.app/"
+    );
 
-    const val = await fetch("http://localhost:3000")
-    const dados = await val.json()
+    const dados = await resposta.json();
 
-    console.log(dados)
-    
-}
+    console.log(dados.pizzas);
+};
 
-app()
+app();
