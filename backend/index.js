@@ -1,18 +1,12 @@
 const express = require("express")
 const app = express()
-
-// -const PORT = 3000
-
 const cardapio = require("./dados/cardapio");
-app.use("/imagem", express.static("imagem"));
 const cors = require('cors');
 
+app.use("/imagem", express.static("imagem"));
 app.use(cors());
-
 app.use(express.json());
 app.use(express.static("public"));
-
-
 
 app.get("/api/pizzas", (req, res) => {
     res.json(cardapio);
@@ -20,12 +14,8 @@ app.get("/api/pizzas", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
-// app.get("/pizza",(req,res)=>{
 
-//     res.json(cardapio.pizzas)
-// })
-
-// app.get("/refrigerantes",(req,res)=>{
+// app.get("/api/refrigerantes",(req,res)=>{
 
 //     res.json(cardapio.refrigerantes)
 // })

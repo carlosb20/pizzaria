@@ -7,7 +7,7 @@ const app = async () => {
 
     const dados = await resposta.json();
 
-    console.log(dados.pizzas);
+    console.log(dados.refrigerantes);
 };
 
 app();
