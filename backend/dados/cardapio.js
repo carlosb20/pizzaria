@@ -22,21 +22,22 @@ const cardapio = {
   ],
 
   refrigerantes: [
-    { id: 1, nome: "Coca-Cola 350ml", preco: 6.00 },
-    { id: 2, nome: "Coca-Cola 2L", preco: 14.00 },
-    { id: 3, nome: "Guaraná Antarctica 350ml", preco: 5.50 },
-    { id: 4, nome: "Guaraná Antarctica 2L", preco: 13.00 },
-    { id: 5, nome: "Fanta Laranja 350ml", preco: 5.50 },
-    { id: 6, nome: "Fanta Uva 350ml", preco: 5.50 },
-    { id: 7, nome: "Sprite 350ml", preco: 5.50 },
-    { id: 8, nome: "Sprite 2L", preco: 13.00 },
-    { id: 9, nome: "Pepsi 350ml", preco: 5.00 },
-    { id: 10, nome: "Pepsi 2L", preco: 12.00 },
-    { id: 11, nome: "Coca-Cola Zero 350ml", preco: 6.00 },
-    { id: 12, nome: "Coca-Cola Zero 2L", preco: 14.00 },
-    { id: 13, nome: "Pepsi Black 350ml", preco: 5.50 },
-    { id: 14, nome: "Fanta Guaraná 350ml", preco: 5.50 },
-    { id: 15, nome: "Guaraná Jesus 350ml", preco: 5.50 }
+    { id: 0, nome: "Coca-Cola ", preco: 6.00, foto:"coca-cola-350.jpg",mL:"350 ml"},
+    { id: 1, nome: "Coca-Cola", preco: 14.00, foto:"coca-cola2L.jpg",mL:"2L"},
+    { id: 2, nome: "Guaraná Antarctica", preco: 5.50,foto:"Guarana-Antarctica-350ml.jpg",mL:" 350 ml"},
+    { id: 3, nome: "Guaraná Antarctica", preco: 13.00, foto:"Guarana-Antarctica-2L.jpg",mL:"2L"},
+    { id: 4, nome: "Fanta Laranja", preco: 5.50,foto:"Fanta-laranja-2L.jpg", mL:"2L"},
+    { id: 5, nome: "Fanta Uva", preco: 5.50 ,foto:"Fanta-uva-350.jpg ", mL:"350 ml"},
+    { id: 6, nome: "Sprite", preco: 5.50,foto:"Sprite-350ml.jpg", mL:"350 ml"},
+    { id: 7, nome: "Sprite", preco: 13.00 ,foto:"Sprite-2L.jpg",mL:"2L" },
+    { id: 8, nome: "Pepsi", preco: 5.00,foto:"pepsi-350ml.jpg",mL:"350 ml"},
+    { id: 9, nome: "Pepsi", preco: 12.00,foto:"pepsi-2L.jpg",mL:"2L" },
+    { id: 10, nome: "Coca-Cola Zero", preco: 6.00,foto:"Coca-Cola-Zero-350ml.jpg",mL:"350 ml"},
+    { id: 11, nome: "Coca-Cola Zero", preco: 14.00,foto:"Coca-Cola-Zero-2L.jpg",mL:"2 L"},
+    { id: 12, nome: "Pepsi Black", preco: 5.50 ,foto:"Pepsi-Black-350ml.jpg"},
+    { id: 13, nome: "Fanta Guaraná 350ml", preco: 5.50,foto:"Fanta-Guarana-350ml.jpg",mL:"350 ml"},
+    { id: 14, nome: "Guaraná Jesus 350ml", preco: 5.50,foto:"Guarana-Jesus-350ml.jpg"},
+    { id: 15, nome: "Guaraná Jesus 2L", preco:15.00,foto:"Guarana-Jesus-2L.jpg"}
     
   ]
 };
