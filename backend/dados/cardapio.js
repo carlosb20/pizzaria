@@ -22,7 +22,7 @@ const cardapio = {
   ],
 
   refrigerantes: [
-    { id: 0, nome: "Coca-Cola ", preco: 6.00, foto:"coca-cola.jpg",mL:"350 ml"},
+    { id: 0, nome: "Coca-Cola ", preco: 6.00, foto:"coca-cola-350.jpg",mL:"350 ml"},
     { id: 1, nome: "Coca-Cola", preco: 14.00, foto:"coca-cola2L.jpg",mL:"2L"},
     { id: 2, nome: "Guaraná Antarctica", preco: 5.50,foto:"Guarana-Antarctica-350ml.jpg",mL:" 350 ml"},
     { id: 3, nome: "Guaraná Antarctica", preco: 13.00, foto:"Guarana-Antarctica-2L.jpg",mL:"2L"},
