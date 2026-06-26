@@ -1,25 +1,29 @@
 
 const img = document.getElementById("img")
+const id_p = document.getElementById("num")
+const btn = document.getElementById("btn")
 
-const app = async () => {
+const app = async (vals) => {
     const resposta = await fetch("https://pizzaria-production-299a.up.railway.app/api/pizzas");
     const dados = await resposta.json();
 
-<<<<<<< HEAD
-    console.log(dados.refrigerantes);
-=======
-    console.log(dados.refrigerantes[0]);
+    console.log(dados.refrigerantes[vals]);
 
 
     const val = `
     
-    https://pizzaria-production-299a.up.railway.app/imagem/${dados.refrigerantes[1].foto}`
+    https://pizzaria-production-299a.up.railway.app/imagem/${dados.refrigerantes[vals].foto}`
 
     img.src = val
   
 
     console.log(val)
->>>>>>> f9d836e73ddf3bbcb983b2795ac2a01329a81896
+
 };
 
-app();
+btn.addEventListener("click",()=>{
+
+    app(Number(id_p.value))
+
+})
+
