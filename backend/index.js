@@ -5,17 +5,14 @@ const cors = require('cors');
 
 app.use("/imagem", express.static("imagem"));
 app.use(cors());
-<<<<<<< HEAD
+
 app.use(express.json());
 app.use(express.static("public"));
 
-=======
 app.use("/imagem", express.static("imagem"));
 app.use(express.json());
 app.use(express.static("public"));
 
-// ver todos os itens
->>>>>>> f9d836e73ddf3bbcb983b2795ac2a01329a81896
 app.get("/api/pizzas", (req, res) => {
     res.json(cardapio);
 });
@@ -23,14 +20,13 @@ app.get("/api/pizzas", (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
-<<<<<<< HEAD
+
 
 // app.get("/api/refrigerantes",(req,res)=>{
 
 //     res.json(cardapio.refrigerantes)
 // })
-=======
->>>>>>> f9d836e73ddf3bbcb983b2795ac2a01329a81896
+
 
 // app.get("/pizza/:id", (req, res) => {
 //     const id = Number(req.params.id);
