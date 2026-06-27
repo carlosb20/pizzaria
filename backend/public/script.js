@@ -23,7 +23,7 @@ setPizzas()
 
 const itensNome = async (nome) => {
     const resposta = await fetch(
-        `https://pizzaria-production-299a.up.railway.app/api/pizza/${nome}`
+        `https://pizzaria-production-299a.up.railway.app/api/pizza/nome/${nome}`
     );
 
     const dados = await resposta.json();
