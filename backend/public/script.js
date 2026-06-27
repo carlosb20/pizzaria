@@ -10,14 +10,9 @@ const setPizzas = async () => {
     console.log(dados.refrigerantes[1]);
 
 
-    const val = `
+    const val = ` https://pizzaria-production-299a.up.railway.app/imagem/${dados.refrigerantes[8].foto}`
 
-    https://pizzaria-production-299a.up.railway.app/imagem/${dados.refrigerantes[8].foto}`
-
-    const val = `https://pizzaria-production-299a.up.railway.app/imagem/${dados.refrigerantes[0].foto}`
-
-
-
+   
     img.src = val
 
     console.log(val)
