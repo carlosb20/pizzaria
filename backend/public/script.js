@@ -12,7 +12,11 @@ const app = async () => {
 
     const val = `
     
+<<<<<<< HEAD
     https://pizzaria-production-299a.up.railway.app/imagem/${dados.refrigerantes[4].foto}`
+=======
+    https://pizzaria-production-299a.up.railway.app/imagem/${dados.refrigerantes[8].foto}`
+>>>>>>> producoaCarlos
 
     img.src = val
   
