@@ -14,14 +14,16 @@ const app = async () => {
 
     https://pizzaria-production-299a.up.railway.app/imagem/${dados.refrigerantes[8].foto}`
 
+    const val = `https://pizzaria-production-299a.up.railway.app/imagem/${dados.refrigerantes[0].foto}`
+
+
 
     img.src = val
-  
 
     console.log(val)
 
 };
-app()
+
 
 // btn.addEventListener("click",()=>{
 
@@ -29,3 +31,15 @@ app()
 
 // })
 
+const itensNome = async (nome) => {
+    const resposta = await fetch(
+        `https://pizzaria-production-299a.up.railway.app/api/pizza/${nome}`
+    );
+
+    const dados = await resposta.json();
+
+    console.log(dados);
+    return dados;
+};
+
+itensNome("Calabresa");
