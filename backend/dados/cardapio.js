@@ -30,7 +30,7 @@ const cardapio = {
     { id: 5, nome: "Fanta Uva", preco: 5.50 ,foto:"fanta-uva-350.jpg ", mL:"350 ml"},
     { id: 6, nome: "Sprite", preco: 5.50,foto:"Sprite-350ml.jpg", mL:"350 ml"},
     { id: 7, nome: "Sprite", preco: 13.00 ,foto:"Sprite-2L.jpg",mL:"2L" },
-    { id: 8, nome: "Pepsi", preco: 5.00,foto:"pepsi-350ml.jpg",mL:"350 ml"},
+    { id: 8, nome: "Pepsi", preco: 5.00,foto:"pepsi-350ml.jpg",mL:"350 ml"},  
     { id: 9, nome: "Pepsi", preco: 12.00,foto:"pepsi-2L.jpg",mL:"2L" },
     { id: 10, nome: "Coca-Cola Zero", preco: 6.00,foto:"Coca-Cola-Zero-350ml.jpg",mL:"350 ml"},
     { id: 11, nome: "Coca-Cola Zero", preco: 14.00,foto:"Coca-Cola-Zero-2L.jpg",mL:"2 L"},
