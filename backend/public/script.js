@@ -10,7 +10,7 @@ const app = async () => {
 
     const val = `
     
-    https://pizzaria-production-299a.up.railway.app/imagem/${dados.refrigerantes[1].foto}`
+    https://pizzaria-production-299a.up.railway.app/imagem/${dados.refrigerantes[4].foto}`
 
     img.src = val
   
