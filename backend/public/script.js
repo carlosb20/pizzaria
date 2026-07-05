@@ -10,8 +10,6 @@ const setPizzas = async () => {
     const resposta = await fetch("https://pizzaria-production-299a.up.railway.app/api/pizzas");
     const dados = await resposta.json();
 
-<<<<<<< HEAD
-=======
     dados.pizzas.map((e)=>{
         const div_itens2 = document.createElement("div")
         div_itens2.style.display = 'flex'
@@ -21,26 +19,11 @@ const setPizzas = async () => {
         div_itens2.style.boxShadow = '0px 0px 10px 0px black'
         div_itens2.style.padding = '0.4em'
         div_itens2.style.alignItems = 'center'
->>>>>>> producoaCarlos
+
 
         const img_ = document.createElement("img")
         const h2 = document.createElement("h2")
         const h3 = document.createElement("h3")
-
-<<<<<<< HEAD
-
-    const val = ` https://pizzaria-production-299a.up.railway.app/imagem/${dados.refrigerantes[8].foto}`
-
-
-
-
-
-   
-    img.src = val
-
-    console.log(val)
-
-=======
         const div_cont = document.createElement("div")
         div_cont.style.width = '150px'
         div_cont.style.height = '50px'
@@ -58,7 +41,7 @@ const setPizzas = async () => {
         div_cont.appendChild(h3)
         itens_pizzas.appendChild(div_itens)
     })
->>>>>>> producoaCarlos
+
 };
 setPizzas()
 
