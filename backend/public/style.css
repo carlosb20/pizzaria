@@ -129,27 +129,61 @@ img {
     padding: 0.6em;
   
 }
-
+/*  bebidas  */
 #bebidas{
    
-    padding: 0.8em;
-  
-   
+    padding-top: 0.8em;
+    margin: 0.6em;
 }
 
-#bebidas h2{
-    font-size: 1.5rem;
-    color: rgb(238, 242, 245);
+#bebidas  p{
+    font-size: 1.1rem;
+    color: rgb(52, 54, 55);
+    padding-bottom: 0.3em;
+    text-align: center;
+    /* background-color: aqua; */
+}
+
+.div_bebidas{
+    border-radius: 0.5em;
+    border:0.01em solid red;
+    
+    
+}
+
+.div_bebidas:hover{
+
+    transform: scale(1.1);
+    box-shadow: 1px 0px 10px 4px rgb(37, 37, 36);
+    border-bottom:0.9em solid rgb(149, 255, 0);
+    border-top:0.9em solid rgb(149, 255, 0);
+    background-color: rgba(0, 255, 255, 0.196);
+    
+    
+}
+.cont-bebidas img:hover{
+    transform: scale(1.04);
+}
+
+.div_bebidas img{
+
+    width:100%;
+    border-radius: 10%;
+  
 }
 
 .cont-bebidas{
 
     display: flex;
+    justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
+    padding: 0.6em;
 }
 
-#bebidas .cont-bebidas div  h2{
+#bebidas .cont-bebidas div > h2{
     color: rgb(131, 120, 142);
     text-align: center;
+    /* background-color: black; */
 
 }

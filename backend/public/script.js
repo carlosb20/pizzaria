@@ -54,26 +54,33 @@ const setBebidas = async () =>{
     const resposta = await fetch("https://pizzaria-production-299a.up.railway.app/api/pizzas");
     const dados = await resposta.json();
     
-    // console.log(dados.refrigerantes)
+    console.log(dados.refrigerantes)
     dados.refrigerantes.map((el)=>{
         const div_bebidas = document.createElement('div')
-        div_bebidas.style.border = '1px solid red'
+        div_bebidas.setAttribute("class","div_bebidas")
         const div_bebidasimg = document.createElement('img')
-        const h2 = document.createElement('h2')
+
+        const p_nome = document.createElement('p')
+        const p_preco = document.createElement("p")
+         const p_ml = document.createElement("p")
 
 
         const img_b = `https://pizzaria-production-299a.up.railway.app/imagem/${el.foto}`
 
         div_bebidasimg.src = img_b
-        h2.textContent = `${el.nome}`
+        p_nome.textContent = `${el.nome}`
+        p_preco.textContent =`Preço:${el.preco} $`
+        p_ml.textContent = `${el.mL}`
 
 
         div_bebidas.appendChild(div_bebidasimg)
-        div_bebidas.appendChild(h2)
+        div_bebidas.appendChild(p_nome)
+        div_bebidas.appendChild(p_preco)
+        div_bebidas.appendChild(p_ml)
         div_bebidas_cont.appendChild(div_bebidas)
         bebidas.appendChild(div_bebidas_cont)
 
-        console.log(el)
+        // console.log(el)
     })
 
 }
