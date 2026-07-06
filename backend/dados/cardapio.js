@@ -34,10 +34,10 @@ const cardapio = {
     { id: 9, nome: "Pepsi", preco: 12.00,foto:"Pepsi-2L.jpg",mL:"2L" },
     { id: 10, nome: "Coca-Cola Zero", preco: 6.00,foto:"Coca-Cola-Zero-350ml.jpg",mL:"350 ml"},
     { id: 11, nome: "Coca-Cola Zero", preco: 14.00,foto:"Coca-Cola-Zero-2L.jpg",mL:"2 L"},
-    { id: 12, nome: "Pepsi Black", preco: 5.50 ,foto:"Pepsi-Black-350ml.jpg"},
+    { id: 12, nome: "Pepsi Black", preco: 5.50 ,foto:"Pepsi-Black-350ml.jpg",mL:"ml 350 ml"},
     { id: 13, nome: "Fanta Guaraná 350ml", preco: 5.50,foto:"Fanta-Guarana-350ml.jpg",mL:"350 ml"},
-    { id: 14, nome: "Guaraná Jesus 350ml", preco: 5.50,foto:"Guarana-Jesus-350ml.jpg"},
-    { id: 15, nome: "Guaraná Jesus 2L", preco:15.00,foto:"Guarana-Jesus-2L.jpg"}
+    { id: 14, nome: "Guaraná Jesus 350ml", preco: 5.50,foto:"Guarana-Jesus-350ml.jpg",mL:"350 ml"},
+    { id: 15, nome: "Guaraná Jesus 2L", preco:15.00,foto:"Guarana-Jesus-2L.jpg",mL:"2L"}
     
   ]
 };
