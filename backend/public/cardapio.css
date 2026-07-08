@@ -1,0 +1,43 @@
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  
+}
+
+.cardapio{
+    display: flex;
+    justify-content:space-evenly;
+   
+}
+
+.cardapio #cont01{
+    background-color: aquamarine;
+    width: 100%;
+    padding: 0.8em;
+}
+
+#cont01 h1{
+    justify-self: center;
+    color: blue;
+}
+
+.carrinho{
+   
+    background-color: aquamarine;
+    padding:1.4em;
+    
+}
+
+.cardapio p{
+    text-align: end;
+    color: red;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.cardapio img{
+
+    width: 30px;
+}

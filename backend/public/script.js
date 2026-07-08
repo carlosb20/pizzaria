@@ -58,7 +58,7 @@ const setBebidas = async () =>{
         const div_bebidas = document.createElement('div')
         div_bebidas.setAttribute("class","div_bebidas")
         const div_bebidasimg = document.createElement('img')
-
+        div_bebidasimg.style.width = "100%"
         const p_nome = document.createElement('p')
         const p_preco = document.createElement("p")
          const p_ml = document.createElement("p")
