@@ -32,7 +32,9 @@
 }
 
 .cardapio p{
-    text-align: end;
+    position: absolute;
+    top: 0.5em;
+    right: 1.5em;
     color: red;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -41,3 +43,7 @@
 
     width: 30px;
 }
+
+/* .contCaixa{
+    display: none;
+} */
