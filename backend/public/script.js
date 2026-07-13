@@ -12,27 +12,24 @@ const setPizzas = async () => {
 
     dados.pizzas.map((e)=>{
         const div_itens2 = document.createElement("div")
-        div_itens2.style.display = 'flex'
-        div_itens2.style.flexDirection = ' column'
-        div_itens2.style.width = '12em'
-        div_itens2.style.height = '17em'
-        div_itens2.style.boxShadow = '0px 0px 10px 0px black'
-        div_itens2.style.padding = '0.4em'
-        div_itens2.style.alignItems = 'center'
 
-
+        div_itens2.setAttribute('class','div_itens2')
+    
         const img_ = document.createElement("img")
+        img_.style.width = '100%'
         const h2 = document.createElement("h2")
         const h3 = document.createElement("h3")
         const div_cont = document.createElement("div")
-        div_cont.style.width = '150px'
-        div_cont.style.height = '50px'
+        div_cont.style.width = '100%'
+        div_cont.style.height = '80px'
         div_cont.style.tableLayout = 'center'
         const imgs = `https://pizzaria-production-299a.up.railway.app/imagem/${e.foto}`
        
         img_.src = imgs
         h2.textContent = `Pizza ${e.nome}`
         h3.textContent = `Preço ${e.preco} $`
+        h3.style.fontSize = '0.9em'
+       
         
         div_itens.appendChild(div_itens2)
         div_itens2.appendChild(img_)
@@ -59,7 +56,7 @@ const setBebidas = async () =>{
         const div_bebidas = document.createElement('div')
         div_bebidas.setAttribute("class","div_bebidas")
         const div_bebidasimg = document.createElement('img')
-
+        div_bebidasimg.style.width = "100%"
         const p_nome = document.createElement('p')
         const p_preco = document.createElement("p")
          const p_ml = document.createElement("p")
