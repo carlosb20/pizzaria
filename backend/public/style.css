@@ -136,9 +136,11 @@ body {
         min-height:auto;
         
     }
+    
     .div_bebidas{
-        width: 8em;
+        max-width: 6em;
         height: auto;
+       
     }
 
 }
