@@ -3,6 +3,7 @@ const img = document.getElementById("img")
 const id_p = document.getElementById("num")
 const itens_pizzas = document.getElementById("cardapio")
 
+
 const div_itens = document.createElement("div")
 div_itens.setAttribute("class","cont-pizzas")
 
@@ -16,19 +17,20 @@ const setPizzas = async () => {
        
         const img_ = document.createElement("img")
         img_.style.width = '100%'
+        img_.style.height = 'auto'
         const h2 = document.createElement("h2")
         const h3 = document.createElement("h3")
 
         const div_cont = document.createElement("div")
         div_cont.style.width = '100%'
-        div_cont.style.height = '80px'
+        div_cont.style.height = '50px'
         div_cont.style.tableLayout = 'center'
         const imgs = `https://pizzaria-production-299a.up.railway.app/imagem/${e.foto}`
        
         img_.src = imgs
         h2.textContent = `Pizza ${e.nome}`
         h3.textContent = `Preço ${e.preco} $`
-        h3.style.fontSize = '0.9em'
+        h3.style.fontSize = '0.6em'
        
         
         div_itens.appendChild(div_itens2)
