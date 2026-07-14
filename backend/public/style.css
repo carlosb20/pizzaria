@@ -5,9 +5,13 @@
     font: 1em sans-serif;
 }
 
+
 body {
     background-color: rgba(245, 242, 242, 0.844);
+    
 }
+
+
 
 .navbar {
     display: flex;
@@ -64,8 +68,7 @@ body {
 }
 
 @media (max-width:768px) {
-
-
+   
     .navbar .logo {
 
         font-size: 1.7em;
@@ -99,25 +102,44 @@ body {
     }
     .div_itens2{
         max-width:8em;
-        min-height:10em;
+        min-height:auto;
+        
     }
-    #inicio , h2{
+
+    .div_itens2 h3{
         font-size: 0.7em;
-    
-       
+    }
+
+    #inicio , h2{
+        font-size: 0.6em;
+  
     }
     .div_bebidas{
-        max-width: 7em;
-        min-height: 7em;
+        width: 10em;
+        height: auto;
     }
 
     #bebidas .div_bebidas  p{
         font-size: 0.8em;  
     }
     .div_bebidas img{
-        width: 7em;
-        height: 7em;
+        width: 100%;
+        height: auto;
 }
+
+}
+
+@media (max-width: 576px) {
+   
+    .div_itens2{
+        max-width:5em;
+        min-height:auto;
+        
+    }
+    .div_bebidas{
+        width: 8em;
+        height: auto;
+    }
 
 }
 
