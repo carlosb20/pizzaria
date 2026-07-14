@@ -55,10 +55,10 @@ const setBebidas = async () =>{
         const div_bebidas = document.createElement('div')
         div_bebidas.setAttribute("class","div_bebidas")
         const div_bebidasimg = document.createElement('img')
-        div_bebidasimg.style.width = "100%"
         const p_nome = document.createElement('p')
         const p_preco = document.createElement("p")
-         const p_ml = document.createElement("p")
+        const p_ml = document.createElement("p")
+      
 
 
         const img_b = `https://pizzaria-production-299a.up.railway.app/imagem/${el.foto}`
@@ -74,11 +74,11 @@ const setBebidas = async () =>{
         div_bebidas.appendChild(p_preco)
         div_bebidas.appendChild(p_ml)
         div_bebidas_cont.appendChild(div_bebidas)
-        bebidas.appendChild(div_bebidas_cont)
+       
 
         // console.log(el)
     })
-
+    bebidas.appendChild(div_bebidas_cont)
 }
 
 setBebidas()

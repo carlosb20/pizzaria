@@ -106,6 +106,19 @@ body {
     
        
     }
+    .div_bebidas{
+        max-width: 7em;
+        min-height: 7em;
+    }
+
+    #bebidas .div_bebidas  p{
+        font-size: 0.8em;  
+    }
+    .div_bebidas img{
+        width: 7em;
+        height: 7em;
+}
+
 }
 
 /* main{
@@ -126,6 +139,7 @@ body {
 #inicio p {
     text-align: center;
     padding-bottom: 0.8em;
+  
 }
 
 .cont-pizzas {
@@ -167,11 +181,17 @@ img {
 }
 
 .div_bebidas{
+    width: 10em;
     border-radius: 0.5em;
     border:0.01em solid red;
-    
-    
+      
 }
+.div_bebidas img{
+    max-width: 10em;
+    min-height: 4em;
+}
+
+
 
 .div_bebidas:hover{
 
@@ -203,12 +223,12 @@ img {
     padding: 0.6em;
 }
 
-#bebidas .cont-bebidas div > h2{
+/* #bebidas .cont-bebidas div > h2{
     color: rgb(131, 120, 142);
     text-align: center;
-    /* background-color: black; */
+    background-color: black;
 
-}
+} */
 
 .contato {
     padding: 40px 20px;
