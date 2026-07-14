@@ -101,8 +101,8 @@ body {
         gap: 0.7em;
     }
     .div_itens2{
-        max-width:8em;
-        min-height:auto;
+        width:10em;
+        height:auto;
         
     }
 
@@ -132,7 +132,7 @@ body {
 @media (max-width: 576px) {
    
     .div_itens2{
-        max-width:5em;
+        max-width:7em;
         min-height:auto;
         
     }
