@@ -8,6 +8,8 @@
 }
 
 .cardapio{
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content:space-evenly;
    
@@ -31,6 +33,9 @@
     
 }
 
+main{
+    padding-top: 5em;
+}
 .cardapio p{
     position: absolute;
     top: 0.5em;
@@ -40,10 +45,32 @@
 }
 
 .cardapio img{
-
     width: 30px;
 }
 
-/* .contCaixa{
-    display: none;
-} */
+.caixa-itens{
+    max-width: 150px;
+    text-align: center;
+    padding: 0.2em;
+   
+}
+
+.caixa-itens2{
+    max-width: 100%;
+}
+
+.caixa-itens2 p{
+  
+    font-size: 0.8em;
+}
+
+@media (max-width: 481px)  {
+    .caixa-itens{
+        max-width: 110px;
+        text-align: center;
+     
+        gap: 0.4em;
+       
+   
+}
+}
