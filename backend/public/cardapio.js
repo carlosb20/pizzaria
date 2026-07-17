@@ -53,49 +53,27 @@ class Carrinho {
             div_txt.appendChild(p2)
             p2.textContent = `Preço ${e.preco} $`
         })
-        
+
     }
 
     async addToCart() {
         const respostas = await fetch("https://pizzaria-production-299a.up.railway.app/api/pizzas");
         const dados_ = await respostas.json();
+        const ca = document.querySelectorAll('.caixa-itens')
 
-        dados_.pizzas.map((el)=>{
-            console.log(el)
-        })
-        // const add = document.querySelectorAll(".caixa-itens")
-        //console.log(add)
-        // add.forEach((e) => {
-        //     // console.log(e)
-        //     e.addEventListener('click', (el) => {
-        //         console.log(e)
-              
-        //         console.log(e.children[1].children[0])
-                // const produto = {
-                //     id: e.id,
-                //     nome: e.querySelector(".nome").textContent,
-                //     preco: Number(e.querySelector(".preco").textContent),
-                //     quant: 1
-                // };
+        ca.forEach((caixa, index) => {
+            caixa.addEventListener('click', () => {
 
-                // const exixte = this.produtos.find(p => p.id === e.id)
-                // console.log(exixte)
-                // if (!exixte) {
-                //     this.produtos.push(e)
-                //     //  this.produtos.push({ ...e, quant: 1 });
-                //     this.numeroPedidos();
-                // }
-          //  })
-
-        //})
-        // add.addEventListener("click", () => {
-        //         const exixte = this.produtos.find(p => p.id === e.id);
-        //         if (!exixte) {
-
-        //             this.produtos.push({ ...e, quant: 1 });
-        //             this.numeroPedidos();
-        //         }
-        //     });
+                const produto = dados_.pizzas[index]
+                const existe = this.produtos.find(p => p.id === produto.id);
+                
+                if (!existe) {
+                    this.produtos.push({...produto,quant:1});
+                }
+               this.numeroPedidos()
+               console.log(this.produtos)
+            });
+        });  
     }
 
     numeroPedidos() {
@@ -135,11 +113,8 @@ class Carrinho {
                 })
             }
         })
-
-
         // const inptnum = document.createElement("input")
         // inptnum.setAttribute("type", "number");
-
         //produtosCarrinho.appendChild(inptnum)
         //setcompra.appendChild(produtosCarrinho)
         this.checkCarrinho()
