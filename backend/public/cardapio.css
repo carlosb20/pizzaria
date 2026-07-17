@@ -9,6 +9,7 @@
 
 .cardapio{
     position: fixed;
+    z-index: 1000;
     width: 100%;
     display: flex;
     justify-content:space-evenly;
@@ -51,17 +52,48 @@ main{
 .caixa-itens{
     max-width: 150px;
     text-align: center;
-    padding: 0.2em;
-   
+    padding: 0.2em; 
 }
 
 .caixa-itens2{
     max-width: 100%;
+    transition: 0.3s;  
+}
+
+.caixa-itens:hover{
+
+    box-shadow: 0px 0px 10px 3px rgb(4, 4, 32);
+    transform: scale(1.05);
+    
 }
 
 .caixa-itens2 p{
   
     font-size: 0.8em;
+}
+
+i{
+    font-size: 1.8em;
+    padding: 0.1em;
+    left: 0.0em;
+    position: absolute;
+}
+
+.setcompra{
+    display: none;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding-top:2em;
+    margin:0.2em;
+    flex-direction: column;
+}
+
+.produtosCarrinho{
+    width:100%;
+    height:200px;
+   
+    background-color:blue;
 }
 
 @media (max-width: 481px)  {

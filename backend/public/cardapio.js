@@ -26,8 +26,9 @@ class Carrinho {
             div_txt.style.width = '100px'
 
             img.src = `${logoImg}`
-            img.style.width = '6em'
+            img.style.width = '100%'
             img.style.height = '10em'
+            img.style.cursor = 'pointer'
 
             this.section.appendChild(contCaixa)
             this.section.style.display = 'flex'
@@ -51,16 +52,50 @@ class Carrinho {
 
             div_txt.appendChild(p2)
             p2.textContent = `Preço ${e.preco} $`
-
-            contCaixa.addEventListener("click", () => {
-                const exixte = this.produtos.find(p => p.id === e.id);
-                if (!exixte) {
-
-                    this.produtos.push({ ...e, quant: 1 });
-                    this.numeroPedidos();
-                }
-            });
         })
+        
+    }
+
+    async addToCart() {
+        const respostas = await fetch("https://pizzaria-production-299a.up.railway.app/api/pizzas");
+        const dados_ = await respostas.json();
+
+        dados_.pizzas.map((el)=>{
+            console.log(el)
+        })
+        // const add = document.querySelectorAll(".caixa-itens")
+        //console.log(add)
+        // add.forEach((e) => {
+        //     // console.log(e)
+        //     e.addEventListener('click', (el) => {
+        //         console.log(e)
+              
+        //         console.log(e.children[1].children[0])
+                // const produto = {
+                //     id: e.id,
+                //     nome: e.querySelector(".nome").textContent,
+                //     preco: Number(e.querySelector(".preco").textContent),
+                //     quant: 1
+                // };
+
+                // const exixte = this.produtos.find(p => p.id === e.id)
+                // console.log(exixte)
+                // if (!exixte) {
+                //     this.produtos.push(e)
+                //     //  this.produtos.push({ ...e, quant: 1 });
+                //     this.numeroPedidos();
+                // }
+          //  })
+
+        //})
+        // add.addEventListener("click", () => {
+        //         const exixte = this.produtos.find(p => p.id === e.id);
+        //         if (!exixte) {
+
+        //             this.produtos.push({ ...e, quant: 1 });
+        //             this.numeroPedidos();
+        //         }
+        //     });
     }
 
     numeroPedidos() {
@@ -71,42 +106,54 @@ class Carrinho {
         }
     }
 
-    vizualizarCarrinho() {
+    openCard() {
         const ver_carrinho = document.getElementById("carrinho_")
         const contCaixa_ = document.getElementById("main")
-         const p_c = document.getElementById("p_c")
+        const p_c = document.getElementById("p_c")
         const verCarro = document.querySelector(".verCarro")
-        const verdadosCarrinho = document.createElement("div")
+        const setcompra = document.querySelector(".setcompra")
+        // const produtosCarrinho = document.createElement("div")
+        // produtosCarrinho.setAttribute("class"," produtosCarrinho")
 
         ver_carrinho.addEventListener('click', () => {
-             
-            if (this.section.style.display === 'none') {
-                this.section.style.display = 'flex';
-                verCarro.style.display = 'none';
-               
-                verdadosCarrinho.style.width = '150px'
-                verdadosCarrinho.style.height = '150px'
-                verdadosCarrinho.textContent = 'dds'
-                verdadosCarrinho.style.backgroundColor = 'blue'
-                
-                // verCarro.appendChild(verdadosCarrinho)
-                
+            if (this.produtos.length > 0) {
+                if (this.section.style.display === 'none') {
+                    this.section.style.display = 'flex';
+                    verCarro.style.display = 'none';
+                    console.log('dentro do if')
 
-            } else {
-                this.section.style.display = 'none';
-                verCarro.style.display = 'flex';
-                
+                } else {
+                    this.section.style.display = 'none';
+                    verCarro.style.display = 'flex';
+                    verCarro.style.justifyContent = 'center'
+                    setcompra.style.display = 'flex'
+                }
+
+                p_c.addEventListener('click', () => {
+                    this.section.style.display = 'flex';
+                    verCarro.style.display = 'none';
+                })
             }
-
-            p_c.addEventListener('click', () => {
-                this.section.style.display = 'flex';
-                verCarro.style.display = 'none';
-                 
-                console.log('sasa')
-            })
         })
 
-        
+
+        // const inptnum = document.createElement("input")
+        // inptnum.setAttribute("type", "number");
+
+        //produtosCarrinho.appendChild(inptnum)
+        //setcompra.appendChild(produtosCarrinho)
+        this.checkCarrinho()
+    }
+    checkCarrinho() {
+        const produtosCarrinho = document.createElement("div")
+        const setcompra = document.querySelector(".setcompra")
+        produtosCarrinho.setAttribute("class", " produtosCarrinho")
+
+        const inptnum = document.createElement("input")
+        inptnum.setAttribute("type", "number");
+
+        produtosCarrinho.appendChild(inptnum)
+        setcompra.appendChild(produtosCarrinho)
     }
 
     soma() {
@@ -119,7 +166,8 @@ const p = new Carrinho()
 
 p.lista_cardapio()
 p.numeroPedidos()
-p.vizualizarCarrinho()
+p.openCard()
+p.addToCart()
 
 
 
