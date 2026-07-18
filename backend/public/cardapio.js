@@ -7,6 +7,12 @@ class Carrinho {
         this.produtos = [];
         this.section = document.getElementById("cardapio-caixa")
         this.cont_carrinho = document.querySelector(".carrinho > p")
+
+        this.setcompra = document.querySelector(".setcompra")
+        this.produtosCarrinho = document.createElement("div")
+        this.produtosCarrinho.setAttribute("class", " produtosCarrinho")
+        this.setcompra.appendChild(this.produtosCarrinho)
+        // const inptnum = document.createEleme
     }
     async lista_cardapio() {
 
@@ -82,6 +88,7 @@ class Carrinho {
             const total = this.produtos.length;
             this.cont_carrinho.textContent = `${total}`;
         }
+       
     }
 
     openCard() {
@@ -92,7 +99,7 @@ class Carrinho {
         const setcompra = document.querySelector(".setcompra")
         // const produtosCarrinho = document.createElement("div")
         // produtosCarrinho.setAttribute("class"," produtosCarrinho")
-
+       
         ver_carrinho.addEventListener('click', () => {
             if (this.produtos.length > 0) {
                 if (this.section.style.display === 'none') {
@@ -112,23 +119,62 @@ class Carrinho {
                     verCarro.style.display = 'none';
                 })
             }
+            this.checkPedidos()
         })
         // const inptnum = document.createElement("input")
         // inptnum.setAttribute("type", "number");
         //produtosCarrinho.appendChild(inptnum)
         //setcompra.appendChild(produtosCarrinho)
-        this.checkCarrinho()
+        
     }
-    checkCarrinho() {
-        const produtosCarrinho = document.createElement("div")
-        const setcompra = document.querySelector(".setcompra")
-        produtosCarrinho.setAttribute("class", " produtosCarrinho")
+    checkPedidos() {
+      
+        // const setcompra = document.querySelector(".setcompra")
+        // const produtosCarrinho = document.createElement("div")
+        // produtosCarrinho.setAttribute("class", " produtosCarrinho")
+        // setcompra.appendChild(produtosCarrinho)
+        // // const inptnum = document.createElement("input")
+        // inptnum.setAttribute("type", "number")
+        // produtosCarrinho.appendChild(inptnum)
+        this.produtosCarrinho.innerHTML = '';
+        this.produtos.map((el)=>{
 
-        const inptnum = document.createElement("input")
-        inptnum.setAttribute("type", "number");
+            const divPedidos = document.createElement("div")
+            divPedidos.setAttribute("class","cont-pedidos")
 
-        produtosCarrinho.appendChild(inptnum)
-        setcompra.appendChild(produtosCarrinho)
+            const div_logImg = document.createElement("div")
+            div_logImg.setAttribute("class","div_logImg")
+
+            const div_cont_delete = document.createElement("div")
+            div_cont_delete.setAttribute("class","div_cont_delete")
+            
+            const imgs = `https://pizzaria-production-299a.up.railway.app/imagem/${el.foto}`
+            const fotoI = document.createElement('img')
+            fotoI.src = imgs
+            const nome_pizza = document.createElement('p')
+            nome_pizza.textContent = `${el.nome}`
+
+            const preco = document.createElement('p')
+            preco.textContent = `Preço ${el.preco} $`
+
+            const quant = document.createElement('p')
+            quant.textContent = `quant ${el.quant}`
+            // div_logImg.innerHTML = `<img src = ${imgs}>
+            
+            // <p> sadds </p>
+            // `
+            
+            div_cont_delete.textContent = 'ddzcscsdsdsdsdsdfds'
+            // divPedidos.appendChild(text_h1)
+            divPedidos.appendChild(div_logImg)
+            div_logImg.appendChild(fotoI)
+            div_logImg.append(nome_pizza)
+            div_logImg.append(preco)
+            div_logImg.append(quant)
+            divPedidos.appendChild(div_cont_delete)
+            this.produtosCarrinho.appendChild(divPedidos)
+        })
+       
     }
 
     soma() {
@@ -143,6 +189,7 @@ p.lista_cardapio()
 p.numeroPedidos()
 p.openCard()
 p.addToCart()
+//p.checkPedidos()
 
 
 
