@@ -8,6 +8,9 @@
 }
 
 .cardapio{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
     display: flex;
     justify-content:space-evenly;
    
@@ -31,6 +34,9 @@
     
 }
 
+main{
+    padding-top: 5em;
+}
 .cardapio p{
     position: absolute;
     top: 0.5em;
@@ -40,10 +46,100 @@
 }
 
 .cardapio img{
-
     width: 30px;
 }
 
-/* .contCaixa{
+.caixa-itens{
+    max-width: 150px;
+    text-align: center;
+    padding: 0.2em; 
+}
+
+.caixa-itens2{
+    max-width: 100%;
+    transition: 0.3s;  
+}
+
+.caixa-itens:hover{
+
+    box-shadow: 0px 0px 10px 3px rgb(4, 4, 32);
+    transform: scale(1.05);
+    
+}
+
+.caixa-itens2 p{
+  
+    font-size: 0.8em;
+}
+
+i{
+    font-size: 1.8em;
+    padding: 0.1em;
+    left: 0.0em;
+    position: absolute;
+}
+
+.setcompra{
     display: none;
-} */
+    text-align: center;
+    width: 100%;
+    height: auto;
+    padding-top:2em;
+    margin:0.2em;
+    flex-direction: column;
+    
+}
+
+.produtosCarrinho{
+   
+    width:100%;
+    height:auto;
+    background-color:rgb(136, 136, 212);
+    padding: 0.5em;
+    
+}
+
+.cont-pedidos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    height: auto;
+    border: 0.1em solid red;
+    padding: 0.2em;
+    margin-top:0.6em;
+   
+}
+
+.div_logImg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    height: 60%;
+    border: 1px solid rgb(255, 255, 0);
+}
+.div_logImg img{
+    width: 35%;
+    height:60%;
+    padding: 0.3em;
+}
+
+.div_cont_delete{
+    margin: 0.3em;
+    width: 100%;
+    height: 50%;
+    border: 1px solid rgb(248, 243, 246);
+    
+}
+
+@media (max-width: 481px)  {
+    .caixa-itens{
+        max-width: 110px;
+        text-align: center;
+     
+        gap: 0.4em;
+       
+   
+}
+}
