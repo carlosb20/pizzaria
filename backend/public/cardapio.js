@@ -159,11 +159,9 @@ class Carrinho {
 
             const quant = document.createElement('p')
             quant.textContent = `quant ${el.quant}`
-            // div_logImg.innerHTML = `<img src = ${imgs}>
-            
-            // <p> sadds </p>
-            // `
-            
+         
+            const input_cont = document.createElement("input")
+
             div_cont_delete.textContent = 'ddzcscsdsdsdsdsdfds'
             // divPedidos.appendChild(text_h1)
             divPedidos.appendChild(div_logImg)
