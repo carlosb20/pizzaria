@@ -42,4 +42,4 @@ const cardapio = {
   ]
 };
 
-module.exports = cardapio;
+export default  cardapio;
