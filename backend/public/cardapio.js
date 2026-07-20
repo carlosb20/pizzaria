@@ -16,14 +16,14 @@ class Carrinho {
     }
     async lista_cardapio() {
 
-        const resposta = await fetch("https://pizzaria-production-299a.up.railway.app/api/pizzas");
+        const resposta = await fetch('https://pizzaria-fxkv.onrender.com/api/pizzas');
         const dados = await resposta.json();
         dados.pizzas.map((e) => {
 
             const contCaixa = document.createElement("div")
             contCaixa.setAttribute("class", 'caixa-itens')
             const img = document.createElement("img")
-            const logoImg = `https://pizzaria-production-299a.up.railway.app/imagem/${e.foto}`
+            const logoImg = `https://pizzaria-fxkv.onrender.com/imagem/${e.foto}`
             const div_txt = document.createElement('div')
             div_txt.setAttribute("class", 'caixa-itens2')
             const p = document.createElement("p");
@@ -63,7 +63,7 @@ class Carrinho {
     }
 
     async addToCart() {
-        const respostas = await fetch("https://pizzaria-production-299a.up.railway.app/api/pizzas");
+        const respostas = await fetch("https://pizzaria-fxkv.onrender.com/api/pizzas");
         const dados_ = await respostas.json();
         const ca = document.querySelectorAll('.caixa-itens')
 
@@ -148,7 +148,7 @@ class Carrinho {
             const div_cont_delete = document.createElement("div")
             div_cont_delete.setAttribute("class","div_cont_delete")
             
-            const imgs = `https://pizzaria-production-299a.up.railway.app/imagem/${el.foto}`
+            const imgs = `https://pizzaria-fxkv.onrender.com/imagem/${el.foto}`
             const fotoI = document.createElement('img')
             fotoI.src = imgs
             const nome_pizza = document.createElement('p')
@@ -159,18 +159,20 @@ class Carrinho {
 
             const quant = document.createElement('p')
             quant.textContent = `quant ${el.quant}`
-            // div_logImg.innerHTML = `<img src = ${imgs}>
-            
-            // <p> sadds </p>
-            // `
-            
-            div_cont_delete.textContent = 'ddzcscsdsdsdsdsdfds'
+         
+            const input_cont = document.createElement("input")
+
+            // div_cont_delete.textContent = 'ddzcscsdsdsdsdsdfds'
             // divPedidos.appendChild(text_h1)
             divPedidos.appendChild(div_logImg)
             div_logImg.appendChild(fotoI)
-            div_logImg.append(nome_pizza)
-            div_logImg.append(preco)
-            div_logImg.append(quant)
+            //div_logImg.append(nome_pizza)
+            div_cont_delete.appendChild(nome_pizza)
+            div_cont_delete.appendChild(preco)
+            div_cont_delete.appendChild(quant)
+
+            //div_logImg.append(preco)
+            //div_logImg.append(quant)
             divPedidos.appendChild(div_cont_delete)
             this.produtosCarrinho.appendChild(divPedidos)
         })

@@ -8,7 +8,7 @@ const div_itens = document.createElement("div")
 div_itens.setAttribute("class","cont-pizzas")
 
 const setPizzas = async () => {
-    const resposta = await fetch("https://pizzaria-production-299a.up.railway.app/api/pizzas");
+    const resposta = await fetch('https://pizzaria-fxkv.onrender.com/api/pizzas');
     const dados = await resposta.json();
 
     dados.pizzas.map((e)=>{
@@ -25,7 +25,7 @@ const setPizzas = async () => {
         div_cont.style.width = '100%'
         div_cont.style.height = '50px'
         div_cont.style.tableLayout = 'center'
-        const imgs = `https://pizzaria-production-299a.up.railway.app/imagem/${e.foto}`
+        const imgs = `https://pizzaria-fxkv.onrender.com/imagem/${e.foto}`
        
         img_.src = imgs
         h2.textContent = `Pizza ${e.nome}`
