@@ -1,6 +1,6 @@
 import express from "express"
 const app = express()
-const cardapio = require("./dados/cardapio");
+import cardapio from "./dados/cardapio";
 const cors = require('cors');
 
 // app.use("/imagem", express.static("imagem"));
