@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static("public"));
 
-app.use("/imagem", express.static("imagem"));
+app.use("/imagem", express.static("public/imagem"));
 app.use(express.json());
 app.use(express.static("public"));
 
