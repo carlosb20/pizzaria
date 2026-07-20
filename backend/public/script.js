@@ -9,6 +9,7 @@ div_itens.setAttribute("class","cont-pizzas")
 
 const setPizzas = async () => {
     const resposta = await fetch('https://pizzaria-fxkv.onrender.com/api/pizzas');
+    
     const dados = await resposta.json();
 
     dados.pizzas.map((e)=>{
@@ -63,7 +64,7 @@ const setBebidas = async () =>{
       
 
 
-        const img_b = `https://pizzaria-fxkv.onrender.com/imagem/${el.foto}}`
+        const img_b = `https://pizzaria-fxkv.onrender.com/imagem/${el.foto}`
 
         div_bebidasimg.src = img_b
         p_nome.textContent = `${el.nome}`

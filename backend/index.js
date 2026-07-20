@@ -3,7 +3,7 @@ const app = express()
 const cardapio = require("./dados/cardapio");
 const cors = require('cors');
 
-app.use("/imagem", express.static("imagem"));
+// app.use("/imagem", express.static("imagem"));
 app.use(cors());
 
 app.use(express.json());
