@@ -1,4 +1,4 @@
-const express = require("express")
+import express from "express"
 const app = express()
 const cardapio = require("./dados/cardapio");
 const cors = require('cors');
