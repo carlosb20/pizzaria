@@ -49,7 +49,7 @@ const div_bebidas_cont = document.createElement('div')
 div_bebidas_cont.setAttribute("class","cont-bebidas")
 
 const setBebidas = async () =>{
-    const resposta = await fetch("https://pizzaria-production-299a.up.railway.app/api/pizzas");
+    const resposta = await fetch("https://pizzaria-fxkv.onrender.com/api/pizzas");
     const dados = await resposta.json();
     
     console.log(dados.refrigerantes)
@@ -63,7 +63,7 @@ const setBebidas = async () =>{
       
 
 
-        const img_b = `https://pizzaria-production-299a.up.railway.app/imagem/${el.foto}`
+        const img_b = `https://pizzaria-fxkv.onrender.com/imagem/${el.foto}}`
 
         div_bebidasimg.src = img_b
         p_nome.textContent = `${el.nome}`
@@ -88,7 +88,7 @@ setBebidas()
 
 const itensNome = async (nome) => {
     const resposta = await fetch(
-        `https://pizzaria-production-299a.up.railway.app/api/pizza/nome/${nome}`
+        `https://pizzaria-fxkv.onrender.com/api/pizzas/nome/${nome}`
     );
 
     const dados = await resposta.json();
