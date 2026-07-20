@@ -16,14 +16,14 @@ class Carrinho {
     }
     async lista_cardapio() {
 
-        const resposta = await fetch("https://pizzaria-production-299a.up.railway.app/api/pizzas");
+        const resposta = await fetch('https://pizzaria-fxkv.onrender.com/api/pizzas');
         const dados = await resposta.json();
         dados.pizzas.map((e) => {
 
             const contCaixa = document.createElement("div")
             contCaixa.setAttribute("class", 'caixa-itens')
             const img = document.createElement("img")
-            const logoImg = `https://pizzaria-production-299a.up.railway.app/imagem/${e.foto}`
+            const logoImg = `https://pizzaria-fxkv.onrender.com/imagem/${e.foto}`
             const div_txt = document.createElement('div')
             div_txt.setAttribute("class", 'caixa-itens2')
             const p = document.createElement("p");
@@ -63,7 +63,7 @@ class Carrinho {
     }
 
     async addToCart() {
-        const respostas = await fetch("https://pizzaria-production-299a.up.railway.app/api/pizzas");
+        const respostas = await fetch("https://pizzaria-fxkv.onrender.com/api/pizzas");
         const dados_ = await respostas.json();
         const ca = document.querySelectorAll('.caixa-itens')
 
@@ -148,7 +148,7 @@ class Carrinho {
             const div_cont_delete = document.createElement("div")
             div_cont_delete.setAttribute("class","div_cont_delete")
             
-            const imgs = `https://pizzaria-production-299a.up.railway.app/imagem/${el.foto}`
+            const imgs = `https://pizzaria-fxkv.onrender.com/imagem/${el.foto}`
             const fotoI = document.createElement('img')
             fotoI.src = imgs
             const nome_pizza = document.createElement('p')
