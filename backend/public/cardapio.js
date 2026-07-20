@@ -162,13 +162,17 @@ class Carrinho {
          
             const input_cont = document.createElement("input")
 
-            div_cont_delete.textContent = 'ddzcscsdsdsdsdsdfds'
+            // div_cont_delete.textContent = 'ddzcscsdsdsdsdsdfds'
             // divPedidos.appendChild(text_h1)
             divPedidos.appendChild(div_logImg)
             div_logImg.appendChild(fotoI)
-            div_logImg.append(nome_pizza)
-            div_logImg.append(preco)
-            div_logImg.append(quant)
+            //div_logImg.append(nome_pizza)
+            div_cont_delete.appendChild(nome_pizza)
+            div_cont_delete.appendChild(preco)
+            div_cont_delete.appendChild(quant)
+
+            //div_logImg.append(preco)
+            //div_logImg.append(quant)
             divPedidos.appendChild(div_cont_delete)
             this.produtosCarrinho.appendChild(divPedidos)
         })
