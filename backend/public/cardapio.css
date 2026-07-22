@@ -1,154 +1,174 @@
-
-
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-  
+
 }
 
-.cardapio{
+.cardapio {
     position: fixed;
     z-index: 1000;
     width: 100%;
     display: flex;
-    justify-content:space-evenly;
-   
+    justify-content: space-evenly;
+
 }
 
-.cardapio #cont01{
+.cardapio #cont01 {
     background-color: aquamarine;
     width: 100%;
     padding: 0.8em;
 }
 
-#cont01 h1{
+#cont01 h1 {
     justify-self: center;
     color: blue;
 }
 
-.carrinho{
-   
+.carrinho {
+
     background-color: aquamarine;
-    padding:1.4em;
-    
+    padding: 1.4em;
+
 }
 
-main{
+main {
     padding-top: 5em;
 }
-.cardapio p{
+
+.cardapio p {
     position: absolute;
     top: 0.5em;
     right: 1.5em;
     color: red;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.cardapio img{
+.cardapio img {
     width: 30px;
 }
 
-.caixa-itens{
+.caixa-itens {
     max-width: 150px;
     text-align: center;
-    padding: 0.2em; 
+    padding: 0.2em;
 }
 
-.caixa-itens2{
+.caixa-itens2 {
     max-width: 100%;
-    transition: 0.3s;  
+    transition: 0.3s;
 }
 
-.caixa-itens:hover{
+.caixa-itens:hover {
 
     box-shadow: 0px 0px 10px 3px rgb(4, 4, 32);
     transform: scale(1.05);
-    
+
 }
 
-.caixa-itens2 p{
-  
+.caixa-itens2 p {
+
     font-size: 0.8em;
 }
 
-i{
+i {
     font-size: 1.8em;
     padding: 0.1em;
     left: 0.0em;
     position: absolute;
+    display: none;
 }
 
-.setcompra{
+.setcompra {
     display: none;
     text-align: center;
     width: 100%;
     height: auto;
-    padding-top:2em;
-    margin:0.2em;
+    padding-top: 2em;
+    margin: 0.2em;
     flex-direction: column;
-    
+
 }
 
-.produtosCarrinho{
-   
-    width:100%;
-    height:auto;
-    background-color:rgb(136, 136, 212);
+.produtosCarrinho {
+
+    width: 100%;
+    height: auto;
+    /* background-color: rgb(40, 40, 234); */
     padding: 0.5em;
-    
+
 }
 
 .cont-pedidos {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width:100%;
+    width: 100%;
     height: auto;
-    border: 0.1em solid red;
+    /* border: 0.1em solid red; */
     padding: 0.2em;
-    margin-top:0.6em;
-   
+    margin-top: 0.6em;
+
 }
 
-.div_logImg{
+.div_logImg {
     display: flex;
     flex-direction: column;
     align-items: end;
-    width:100%;
+    width: 100%;
     height: 60%;
     border: 1px solid rgb(255, 255, 0);
 }
-.div_logImg img{
+
+.div_logImg img {
     width: 35%;
-    height:60%;
+    height: 60%;
     padding: 0.3em;
 }
 
-.div_cont_delete{
+.div_cont_delete {
     margin: 0.3em;
     padding: 0.9em;
     width: 100%;
     height: 50%;
     display: flex;
-    flex-direction:column;
-    align-items:start;
-    border: 1px solid rgb(248, 243, 246);
-    
+    flex-direction: column;
+    align-items: start;
+    border: 1px solid rgb(242, 8, 149);
+
 }
 
-.div_cont_delete p{
+.div_cont_delete p {
     font-size: 1.2rem;
     line-height: 1.2;
 }
 
-@media (max-width: 481px)  {
-    .caixa-itens{
+@media (max-width: 768px) {
+
+    .div_logImg img {
+        width: 100%;
+        height: 60%;
+        padding: 0.3em;
+    }
+
+    .div_cont_delete p {
+        font-size: 1.0rem;
+        line-height: 1.2;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+    .caixa-itens {
         max-width: 110px;
         text-align: center;
-     
         gap: 0.4em;
-       
-   
-}
+    }
+
+    .div_logImg img {
+        width: 100%;
+        height: 60%;
+        padding: 0.3em;
+    }
 }

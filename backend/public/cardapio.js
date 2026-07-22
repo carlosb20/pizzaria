@@ -95,10 +95,12 @@ class Carrinho {
         const p_c = document.getElementById("p_c")
         const verCarro = document.querySelector(".verCarro")
         const setcompra = document.querySelector(".setcompra")
+      
         // const produtosCarrinho = document.createElement("div")
         // produtosCarrinho.setAttribute("class"," produtosCarrinho")
        
         ver_carrinho.addEventListener('click', () => {
+           
             if (this.produtos.length > 0) {
                 if (this.section.style.display === 'none') {
                     this.section.style.display = 'flex';
@@ -160,17 +162,13 @@ class Carrinho {
          
             const input_cont = document.createElement("input")
 
-            // div_cont_delete.textContent = 'ddzcscsdsdsdsdsdfds'
-            // divPedidos.appendChild(text_h1)
+            
             divPedidos.appendChild(div_logImg)
             div_logImg.appendChild(fotoI)
-            //div_logImg.append(nome_pizza)
             div_cont_delete.appendChild(nome_pizza)
             div_cont_delete.appendChild(preco)
             div_cont_delete.appendChild(quant)
 
-            //div_logImg.append(preco)
-            //div_logImg.append(quant)
             divPedidos.appendChild(div_cont_delete)
             this.produtosCarrinho.appendChild(divPedidos)
         })
