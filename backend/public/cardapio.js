@@ -157,8 +157,9 @@ class Carrinho {
             const preco = document.createElement('p')
             preco.textContent = `Preço ${el.preco} $`
 
+            //  Quantidade itens
             const quant = document.createElement('p')
-            quant.textContent = `quant ${el.quant}`
+            quant.textContent = `quant  ${el.quant}`
          
             const input_cont = document.createElement("input")
 
