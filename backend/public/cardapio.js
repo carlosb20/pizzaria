@@ -105,6 +105,7 @@ class Carrinho {
                 if (this.section.style.display === 'none') {
                     this.section.style.display = 'flex';
                     verCarro.style.display = 'none';
+                    
                     console.log('dentro do if')
 
                 } else {
@@ -112,6 +113,8 @@ class Carrinho {
                     verCarro.style.display = 'flex';
                     verCarro.style.justifyContent = 'center'
                     setcompra.style.display = 'flex'
+                    p_c.style.display = 'flex'
+                    console.log(" dentro do else")
                 }
 
                 p_c.addEventListener('click', () => {
@@ -158,17 +161,38 @@ class Carrinho {
             preco.textContent = `Preço ${el.preco} $`
 
             //  Quantidade itens
-            const quant = document.createElement('p')
-            quant.textContent = `quant  ${el.quant}`
+            // const quant = document.createElement('p')
+            // quant.textContent = `quant  ${el.quant}`
          
-            const input_cont = document.createElement("input")
+            // Quantidade itens
+            const div_contador = document.createElement("div")
+            div_contador.setAttribute("class", "div_contador")
 
+            const img_D = document.createElement("img")
+            img_D.src = "./imagem/direito.png"
+            const img_E = document.createElement("img")
+            img_E.src = "./imagem/esquerda.png"
+
+            const quant = document.createElement('p')
+            quant.textContent = `${el.quant}`
+
+            div_contador.appendChild(img_E);
+            div_contador.appendChild(quant)
+            div_contador.appendChild(img_D);
             
             divPedidos.appendChild(div_logImg)
             div_logImg.appendChild(fotoI)
             div_cont_delete.appendChild(nome_pizza)
             div_cont_delete.appendChild(preco)
-            div_cont_delete.appendChild(quant)
+
+            div_cont_delete.appendChild(div_contador)
+
+
+            // divPedidos.appendChild(div_logImg)
+            // div_logImg.appendChild(fotoI)
+            // div_cont_delete.appendChild(nome_pizza)
+            // div_cont_delete.appendChild(preco)
+            // div_cont_delete.appendChild(quant)
 
             divPedidos.appendChild(div_cont_delete)
             this.produtosCarrinho.appendChild(divPedidos)

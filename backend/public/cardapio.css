@@ -143,6 +143,21 @@ i {
     line-height: 1.2;
 }
 
+.div_contador{
+    display: flex;
+    width: 7em;
+    padding: 0.3em;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div_contador img{
+    font-size: 0.3em;
+    width: 6em;
+    padding: 0.3em;
+    background-color: transparent;
+}
+
 @media (max-width: 768px) {
 
     .div_logImg img {
