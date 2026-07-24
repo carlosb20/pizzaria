@@ -70,14 +70,14 @@ class Carrinho {
 
                 const produto = dados_.pizzas[index]
                 const existe = this.produtos.find(p => p.id === produto.id);
-                
+
                 if (!existe) {
-                    this.produtos.push({...produto,quant:1});
+                    this.produtos.push({ ...produto, quant: 1 });
                 }
-               this.numeroPedidos()
-               console.log(this.produtos)
+                this.numeroPedidos()
+                console.log(this.produtos)
             });
-        });  
+        });
     }
 
     numeroPedidos() {
@@ -86,7 +86,7 @@ class Carrinho {
             const total = this.produtos.length;
             this.cont_carrinho.textContent = `${total}`;
         }
-       
+
     }
 
     openCard() {
@@ -95,14 +95,18 @@ class Carrinho {
         const p_c = document.getElementById("p_c")
         const verCarro = document.querySelector(".verCarro")
         const setcompra = document.querySelector(".setcompra")
+        const preco_total = document.querySelector(".soma-total")
+
         // const produtosCarrinho = document.createElement("div")
         // produtosCarrinho.setAttribute("class"," produtosCarrinho")
-       
+
         ver_carrinho.addEventListener('click', () => {
+
             if (this.produtos.length > 0) {
                 if (this.section.style.display === 'none') {
                     this.section.style.display = 'flex';
                     verCarro.style.display = 'none';
+                    preco_total.style.display = "none"
                     console.log('dentro do if')
 
                 } else {
@@ -110,6 +114,9 @@ class Carrinho {
                     verCarro.style.display = 'flex';
                     verCarro.style.justifyContent = 'center'
                     setcompra.style.display = 'flex'
+                    p_c.style.display = 'flex'
+                    preco_total.style.display = "block"
+                    console.log(" dentro do else")
                 }
 
                 p_c.addEventListener('click', () => {
@@ -123,10 +130,10 @@ class Carrinho {
         // inptnum.setAttribute("type", "number");
         //produtosCarrinho.appendChild(inptnum)
         //setcompra.appendChild(produtosCarrinho)
-        
+
     }
     checkPedidos() {
-      
+
         // const setcompra = document.querySelector(".setcompra")
         // const produtosCarrinho = document.createElement("div")
         // produtosCarrinho.setAttribute("class", " produtosCarrinho")
@@ -135,17 +142,17 @@ class Carrinho {
         // inptnum.setAttribute("type", "number")
         // produtosCarrinho.appendChild(inptnum)
         this.produtosCarrinho.innerHTML = '';
-        this.produtos.map((el)=>{
+        this.produtos.map((el) => {
 
             const divPedidos = document.createElement("div")
-            divPedidos.setAttribute("class","cont-pedidos")
+            divPedidos.setAttribute("class", "cont-pedidos")
 
             const div_logImg = document.createElement("div")
-            div_logImg.setAttribute("class","div_logImg")
+            div_logImg.setAttribute("class", "div_logImg")
 
             const div_cont_delete = document.createElement("div")
-            div_cont_delete.setAttribute("class","div_cont_delete")
-            
+            div_cont_delete.setAttribute("class", "div_cont_delete")
+
             const imgs = `https://pizzaria-fxkv.onrender.com/imagem/${el.foto}`
             const fotoI = document.createElement('img')
             fotoI.src = imgs
@@ -155,31 +162,78 @@ class Carrinho {
             const preco = document.createElement('p')
             preco.textContent = `Preço ${el.preco} $`
 
-            const quant = document.createElement('p')
-            quant.textContent = `quant ${el.quant}`
-         
-            const input_cont = document.createElement("input")
+            //  Quantidade itens
+            // const quant = document.createElement('p')
+            // quant.textContent = `quant  ${el.quant}`
 
-            // div_cont_delete.textContent = 'ddzcscsdsdsdsdsdfds'
-            // divPedidos.appendChild(text_h1)
+            // Quantidade itens
+            const div_contador = document.createElement("div")
+            div_contador.setAttribute("class", "div_contador")
+
+            const img_D = document.createElement("img")
+            img_D.src = "./imagem/direito.png"
+            const img_E = document.createElement("img")
+            img_E.src = "./imagem/esquerda.png"
+
+            img_D.addEventListener("click", () => {
+                const pizza = this.produtos.find(
+                    p => p.nome === div_cont_delete.children[0].textContent
+                );
+
+                if (pizza) {
+                    pizza.quant++;
+                    quant.textContent = pizza.quant;
+                    this.soma();
+                }
+            });
+
+            // img_D.addEventListener("click", () => {
+            //     console.log(this.produtos)
+
+
+            //     this.soma();
+            // });
+
+
+
+            const quant = document.createElement('p')
+            quant.textContent = `${el.quant}`
+
+            div_contador.appendChild(img_E);
+            div_contador.appendChild(quant)
+            div_contador.appendChild(img_D);
+
             divPedidos.appendChild(div_logImg)
             div_logImg.appendChild(fotoI)
-            //div_logImg.append(nome_pizza)
             div_cont_delete.appendChild(nome_pizza)
             div_cont_delete.appendChild(preco)
-            div_cont_delete.appendChild(quant)
 
-            //div_logImg.append(preco)
-            //div_logImg.append(quant)
+            div_cont_delete.appendChild(div_contador)
+
+
+            // divPedidos.appendChild(div_logImg)
+            // div_logImg.appendChild(fotoI)
+            // div_cont_delete.appendChild(nome_pizza)
+            // div_cont_delete.appendChild(preco)
+            // div_cont_delete.appendChild(quant)
+
             divPedidos.appendChild(div_cont_delete)
             this.produtosCarrinho.appendChild(divPedidos)
         })
-       
+        this.soma()
     }
 
     soma() {
-        console.log('pass')
+        const valor_total = document.querySelector(".soma-total > div > span")
+
+        const total = this.produtos.reduce((acumulador, produto) => {
+            return acumulador + Number(produto.preco * produto.quant);
+        }, 0);
+
+        valor_total.textContent = `R$ ${total.toFixed(2)}`;
+
     }
+
 }
 
 
@@ -189,6 +243,7 @@ p.lista_cardapio()
 p.numeroPedidos()
 p.openCard()
 p.addToCart()
+
 //p.checkPedidos()
 
 
