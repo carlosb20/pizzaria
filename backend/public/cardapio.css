@@ -158,6 +158,23 @@ i {
     background-color: transparent;
 }
 
+.soma-total{
+
+    display: none;
+    padding: 0.3em;
+   
+}
+
+.soma-total div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 10em;
+    padding: 0.9em;
+    border-radius: 0.4em;
+    background-color: rgba(255, 3, 3, 0.826);
+}
+
 @media (max-width: 768px) {
 
     .div_logImg img {
