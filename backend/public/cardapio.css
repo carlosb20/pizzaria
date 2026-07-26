@@ -159,20 +159,53 @@ i {
 }
 
 .soma-total{
-
+  
     display: none;
     padding: 0.3em;
+    justify-content: space-around;
+   
    
 }
 
-.soma-total div{
+.soma-total .cont-total{
+    width: 30em;
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    width: 10em;
     padding: 0.9em;
     border-radius: 0.4em;
-    background-color: rgba(255, 3, 3, 0.826);
+    background-color: rgba(244, 7, 7, 0.826);
+}
+
+.cont-total span{
+    padding-left:1em ;
+}
+
+.cont-total div{
+    
+    margin: 0.7em;
+    margin: auto;
+}
+
+.cont-bt{
+    max-width:100%;
+    border:0.1em solid rgb(10, 10, 10) ;
+    border-radius: 0.3em;
+}
+.cont-bt button{
+    position: relative;
+    border: none;
+    transform: translateY(-4px);
+    box-shadow: 0px 4px 0px 2px rgba(0, 0, 0, 0.695);
+    font-size: 1.4em;
+    padding: 0.2em;
+    border-radius: 0.3em;
+}
+
+.cont-bt button:active{
+    transform: translateY(0px);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.695);
+    background-color: rgb(223, 85, 85);
+    color: rgb(60, 157, 231);
 }
 
 @media (max-width: 768px) {
