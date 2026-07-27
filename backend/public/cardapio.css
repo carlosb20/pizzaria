@@ -159,21 +159,18 @@ i {
 }
 
 .soma-total{
-  
     display: none;
     padding: 0.3em;
-    justify-content: space-around;
-   
-   
+    justify-content: space-around; 
 }
 
 .soma-total .cont-total{
     width: 30em;
     display: flex;
-    align-items: center;
     padding: 0.9em;
     border-radius: 0.4em;
     background-color: rgba(244, 7, 7, 0.826);
+    
 }
 
 .cont-total span{
@@ -184,6 +181,9 @@ i {
     
     margin: 0.7em;
     margin: auto;
+}
+.cont-total span{
+    font-size: 1.3em;
 }
 
 .cont-bt{
