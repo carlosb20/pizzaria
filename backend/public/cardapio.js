@@ -97,9 +97,6 @@ class Carrinho {
         const setcompra = document.querySelector(".setcompra")
         const preco_total = document.querySelector(".soma-total")
 
-        // const produtosCarrinho = document.createElement("div")
-        // produtosCarrinho.setAttribute("class"," produtosCarrinho")
-
         ver_carrinho.addEventListener('click', () => {
 
             if (this.produtos.length > 0) {
@@ -122,25 +119,14 @@ class Carrinho {
                 p_c.addEventListener('click', () => {
                     this.section.style.display = 'flex';
                     verCarro.style.display = 'none';
+                    preco_total.style.display = "none"
                 })
             }
             this.checkPedidos()
         })
-        // const inptnum = document.createElement("input")
-        // inptnum.setAttribute("type", "number");
-        //produtosCarrinho.appendChild(inptnum)
-        //setcompra.appendChild(produtosCarrinho)
-
     }
     checkPedidos() {
 
-        // const setcompra = document.querySelector(".setcompra")
-        // const produtosCarrinho = document.createElement("div")
-        // produtosCarrinho.setAttribute("class", " produtosCarrinho")
-        // setcompra.appendChild(produtosCarrinho)
-        // // const inptnum = document.createElement("input")
-        // inptnum.setAttribute("type", "number")
-        // produtosCarrinho.appendChild(inptnum)
         this.produtosCarrinho.innerHTML = '';
         this.produtos.map((el) => {
 
@@ -161,10 +147,6 @@ class Carrinho {
 
             const preco = document.createElement('p')
             preco.textContent = `Preço ${el.preco} $`
-
-            //  Quantidade itens
-            // const quant = document.createElement('p')
-            // quant.textContent = `quant  ${el.quant}`
 
             // Quantidade itens
             const div_contador = document.createElement("div")
@@ -187,12 +169,30 @@ class Carrinho {
                 }
             });
 
-            // img_D.addEventListener("click", () => {
-            //     console.log(this.produtos)
+            img_E.addEventListener("click", () => {
+                const pizza = this.produtos.find(
+                    p => p.nome === div_cont_delete.children[0].textContent
+                );
 
+                if (pizza) {
+                    pizza.quant--;
+                    if (pizza.quant <= 0) {
+                        this.produtos = this.produtos.filter(
+                            p => p.nome !== pizza.nome
+                           
+                        );
+                        divPedidos.remove();
+                    }else{
+                        quant.textContent = pizza.quant;
+                    }
+                    this.soma();
+                }
+                if(this.produtos.length === 0){
+                    console.log('ok')
 
-            //     this.soma();
-            // });
+    
+                }
+            });
 
 
 
