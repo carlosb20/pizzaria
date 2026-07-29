@@ -85,6 +85,14 @@ class Carrinho {
         if (this.produtos.length > 0) {
             const total = this.produtos.length;
             this.cont_carrinho.textContent = `${total}`;
+        }else{
+            const preco_totals = document.querySelector(".soma-total")
+            this.cont_carrinho.textContent = '';
+            this.section.style.display = 'flex';
+            p_c.style.display = 'none'
+            preco_totals.style.display = "none"
+            
+             
         }
 
     }
@@ -176,12 +184,15 @@ class Carrinho {
 
                 if (pizza) {
                     pizza.quant--;
+                    // this.numeroPedidos()
                     if (pizza.quant <= 0) {
                         this.produtos = this.produtos.filter(
                             p => p.nome !== pizza.nome
                            
                         );
+                        
                         divPedidos.remove();
+                        this.numeroPedidos()
                     }else{
                         quant.textContent = pizza.quant;
                     }
