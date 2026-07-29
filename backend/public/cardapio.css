@@ -96,6 +96,7 @@ i {
     height: auto;
     /* background-color: rgb(40, 40, 234); */
     padding: 0.5em;
+   
 
 }
 
@@ -117,11 +118,11 @@ i {
     align-items: end;
     width: 100%;
     height: 60%;
-    border: 1px solid rgb(255, 255, 0);
+    /* border: 1px solid rgb(255, 255, 0); */
 }
 
 .div_logImg img {
-    width: 35%;
+    width: 75%;
     height: 60%;
     padding: 0.3em;
 }
@@ -134,7 +135,7 @@ i {
     display: flex;
     flex-direction: column;
     align-items: start;
-    border: 1px solid rgb(242, 8, 149);
+    /* border: 1px solid rgb(242, 8, 149); */
 
 }
 
@@ -159,9 +160,11 @@ i {
 }
 
 .soma-total{
+    width: 100%;
     display: none;
     padding: 0.3em;
     justify-content: space-around; 
+
 }
 
 .soma-total .cont-total{
@@ -221,7 +224,7 @@ i {
         font-size: 1.3rem;
         
     }
-
+   
 }
 
 
@@ -230,6 +233,7 @@ i {
         max-width: 110px;
         text-align: center;
         gap: 0.4em;
+
     }
 
     .div_logImg img {
@@ -238,6 +242,8 @@ i {
         padding: 0.3em;
     }
     .soma-total .cont-total{
-    width: 22em;
+        width: 22em;
     }
+    
+   
 }
