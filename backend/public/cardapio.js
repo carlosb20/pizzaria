@@ -60,6 +60,42 @@ class Carrinho {
 
     }
 
+    async pegaBebidas(valor){
+        const resposta = await fetch('https://pizzaria-fxkv.onrender.com/api/pizzas');
+        const dados = await resposta.json();
+        return dados[valor]
+    }
+
+    async getBebidas(){
+        console.log('bebidas')
+        const beb = await this.pegaBebidas("refrigerantes")
+        // console.log(beb)
+        const bebidas_ = document.createElement("div")
+        bebidas_.setAttribute("class","bebidas_")
+       
+
+        beb.map((cal)=>{
+            console.log(cal)
+
+            const itens_bebidas = document.createElement("div")
+            itens_bebidas.setAttribute("class","itens_bebidas")
+            const logo_Img = `https://pizzaria-fxkv.onrender.com/imagem/${cal.foto}`
+            const img_bebidas = document.createElement("img")
+            img_bebidas.src = logo_Img
+            
+            // img_bebidas.style.width = "150px"
+            // img_bebidas.style.height = "160px"
+
+            itens_bebidas.appendChild(img_bebidas)
+           
+            
+            bebidas_.appendChild(itens_bebidas)
+        })
+
+        this.section.appendChild(bebidas_)
+
+    }
+
     async addToCart() {
         const respostas = await fetch("https://pizzaria-fxkv.onrender.com/api/pizzas");
         const dados_ = await respostas.json();
@@ -255,7 +291,7 @@ p.numeroPedidos()
 p.openCard()
 p.addToCart()
 
-//p.checkPedidos()
+p.getBebidas()
 
 
 

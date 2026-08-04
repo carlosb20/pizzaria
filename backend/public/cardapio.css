@@ -86,8 +86,7 @@ i {
     height: auto;
     padding-top: 2em;
     margin: 0.2em;
-    flex-direction: column;
-
+    flex-direction: column;    
 }
 
 .produtosCarrinho {
@@ -247,3 +246,24 @@ i {
     
    
 }
+/*  Bebidas  */
+
+.bebidas_{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 0.3em;
+}
+
+.itens_bebidas{
+    width: 150px;
+    height:auto;
+    border: 1px solid red;
+    
+}
+
+.itens_bebidas img{
+    width: 100%;
+    padding: 0.3em;
+}
+
+
