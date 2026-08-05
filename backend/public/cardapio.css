@@ -258,12 +258,27 @@ i {
     width: 150px;
     height:auto;
     border: 1px solid red;
-    
+    align-content: end;
 }
+
+.itens_bebidas:hover{
+    box-shadow: 0px 0px 10px 2px black;
+    transform: scale(1.05);
+}
+
 
 .itens_bebidas img{
     width: 100%;
     padding: 0.3em;
 }
+
+
+.contbebidas{
+    background-color: rgb(234, 223, 223);
+    padding: 0.4em;
+}
+
+
+
 
 

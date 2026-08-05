@@ -60,39 +60,53 @@ class Carrinho {
 
     }
 
-    async pegaBebidas(valor){
+    async pegaBebidas(valor) {
         const resposta = await fetch('https://pizzaria-fxkv.onrender.com/api/pizzas');
         const dados = await resposta.json();
         return dados[valor]
     }
 
-    async getBebidas(){
+    async getBebidas() {
         console.log('bebidas')
         const beb = await this.pegaBebidas("refrigerantes")
         // console.log(beb)
         const bebidas_ = document.createElement("div")
-        bebidas_.setAttribute("class","bebidas_")
-       
+        bebidas_.setAttribute("class", "bebidas_")
 
-        beb.map((cal)=>{
-            console.log(cal)
+
+        beb.map((cal) => {
+            // console.log(cal)
 
             const itens_bebidas = document.createElement("div")
-            itens_bebidas.setAttribute("class","itens_bebidas")
+            itens_bebidas.setAttribute("class", "itens_bebidas")
             const logo_Img = `https://pizzaria-fxkv.onrender.com/imagem/${cal.foto}`
             const img_bebidas = document.createElement("img")
+            const contbebidas = document.createElement("div")
+            contbebidas.setAttribute("class", " contbebidas")
+
+            const p_nome = document.createElement("p")
+            const p_preco = document.createElement("p")
             img_bebidas.src = logo_Img
-            
-            // img_bebidas.style.width = "150px"
-            // img_bebidas.style.height = "160px"
+
+            p_nome.textContent = `${cal.nome} ${cal.mL}`
+            p_preco.textContent = `preço ${cal.preco} $`
 
             itens_bebidas.appendChild(img_bebidas)
-           
-            
+            contbebidas.appendChild(p_nome)
+            contbebidas.appendChild(p_preco)
+            itens_bebidas.appendChild(contbebidas)
             bebidas_.appendChild(itens_bebidas)
+
+            img_bebidas.addEventListener('click', () => {
+
+                const divPai = img_bebidas.parentElement;
+                console.log(divPai.childNodes[1]);
+            })
         })
 
         this.section.appendChild(bebidas_)
+
+
 
     }
 
@@ -121,14 +135,14 @@ class Carrinho {
         if (this.produtos.length > 0) {
             const total = this.produtos.length;
             this.cont_carrinho.textContent = `${total}`;
-        }else{
+        } else {
             const preco_totals = document.querySelector(".soma-total")
             this.cont_carrinho.textContent = '';
             this.section.style.display = 'flex';
             p_c.style.display = 'none'
             preco_totals.style.display = "none"
-            
-             
+
+
         }
 
     }
@@ -224,20 +238,20 @@ class Carrinho {
                     if (pizza.quant <= 0) {
                         this.produtos = this.produtos.filter(
                             p => p.nome !== pizza.nome
-                           
+
                         );
-                        
+
                         divPedidos.remove();
                         this.numeroPedidos()
-                    }else{
+                    } else {
                         quant.textContent = pizza.quant;
                     }
                     this.soma();
                 }
-                if(this.produtos.length === 0){
+                if (this.produtos.length === 0) {
                     console.log('ok')
 
-    
+
                 }
             });
 
