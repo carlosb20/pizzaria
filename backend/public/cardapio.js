@@ -60,6 +60,74 @@ class Carrinho {
 
     }
 
+    // 
+    async pegaBebidas(valor) {
+        const resposta = await fetch('https://pizzaria-fxkv.onrender.com/api/pizzas');
+        const dados = await resposta.json();
+        return dados[valor]
+    }
+
+    // adicionar bebida no carrinho
+    async addToCartbedidas() {
+        const respostas = await fetch("https://pizzaria-fxkv.onrender.com/api/pizzas");
+        const dados_ = await respostas.json();
+        const ca = document.querySelectorAll('.itens_bebidas')
+
+        ca.forEach((caixa, index) => {
+            caixa.addEventListener('click', () => {
+                console.log('ok')
+                const produto = dados_.refrigerantes[index]
+                const existe = this.produtos.find(p => p.id === produto.id);
+
+                if (!existe) {
+                    this.produtos.push({ ...produto, quant: 1 });
+                }
+                this.numeroPedidos()
+                console.log(this.produtos)
+            });
+        });
+        
+    }
+
+        
+
+    async getBebidas() {
+        console.log('bebidas')
+        const beb = await this.pegaBebidas("refrigerantes")
+        // console.log(beb)
+        const bebidas_ = document.createElement("div")
+        bebidas_.setAttribute("class", "bebidas_")
+
+
+        beb.map((cal) => {
+            // console.log(cal)
+
+            const itens_bebidas = document.createElement("div")
+            itens_bebidas.setAttribute("class", "itens_bebidas")
+            const logo_Img = `https://pizzaria-fxkv.onrender.com/imagem/${cal.foto}`
+            const img_bebidas = document.createElement("img")
+            const contbebidas = document.createElement("div")
+            contbebidas.setAttribute("class", " contbebidas")
+
+            const p_nome = document.createElement("p")
+            const p_preco = document.createElement("p")
+            img_bebidas.src = logo_Img
+
+            p_nome.textContent = `${cal.nome} ${cal.mL}`
+            p_preco.textContent = `preço ${cal.preco} $`
+
+            itens_bebidas.appendChild(img_bebidas)
+            contbebidas.appendChild(p_nome)
+            contbebidas.appendChild(p_preco)
+            itens_bebidas.appendChild(contbebidas)
+            bebidas_.appendChild(itens_bebidas)
+
+        })
+
+        this.section.appendChild(bebidas_)
+
+    }
+    // adicionar pizza no carrinho
     async addToCart() {
         const respostas = await fetch("https://pizzaria-fxkv.onrender.com/api/pizzas");
         const dados_ = await respostas.json();
@@ -79,20 +147,20 @@ class Carrinho {
             });
         });
     }
-
+    // adiciona quantidade de produto
     numeroPedidos() {
 
         if (this.produtos.length > 0) {
             const total = this.produtos.length;
             this.cont_carrinho.textContent = `${total}`;
-        }else{
+        } else {
             const preco_totals = document.querySelector(".soma-total")
             this.cont_carrinho.textContent = '';
             this.section.style.display = 'flex';
             p_c.style.display = 'none'
             preco_totals.style.display = "none"
-            
-             
+
+
         }
 
     }
@@ -133,6 +201,7 @@ class Carrinho {
             this.checkPedidos()
         })
     }
+    //Renderiza a interface do carrinho de compras desenhando os produtos no DOM
     checkPedidos() {
 
         this.produtosCarrinho.innerHTML = '';
@@ -140,6 +209,7 @@ class Carrinho {
 
             const divPedidos = document.createElement("div")
             divPedidos.setAttribute("class", "cont-pedidos")
+            
 
             const div_logImg = document.createElement("div")
             div_logImg.setAttribute("class", "div_logImg")
@@ -188,20 +258,20 @@ class Carrinho {
                     if (pizza.quant <= 0) {
                         this.produtos = this.produtos.filter(
                             p => p.nome !== pizza.nome
-                           
+
                         );
-                        
+
                         divPedidos.remove();
                         this.numeroPedidos()
-                    }else{
+                    } else {
                         quant.textContent = pizza.quant;
                     }
                     this.soma();
                 }
-                if(this.produtos.length === 0){
+                if (this.produtos.length === 0) {
                     console.log('ok')
 
-    
+
                 }
             });
 
@@ -255,7 +325,8 @@ p.numeroPedidos()
 p.openCard()
 p.addToCart()
 
-//p.checkPedidos()
+p.getBebidas()
+p.addToCartbedidas()
 
 
 
