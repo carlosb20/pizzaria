@@ -11,13 +11,19 @@
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+  
 
 }
 
 .cardapio #cont01 {
     background-color: aquamarine;
     width: 100%;
+    display: flex;
+    gap: 5em;
+    align-items: center;
     padding: 0.8em;
+   
+    
 }
 
 #cont01 h1 {
@@ -163,6 +169,10 @@ i {
     display: none;
     padding: 0.3em;
     justify-content: space-around; 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
 
 }
 
@@ -175,6 +185,8 @@ i {
     background-color: rgba(244, 7, 7, 0.826);
     
 }
+
+
 
 .cont-total span{
     padding-left:1em ;
@@ -193,6 +205,7 @@ i {
     width:50%;
     border:0.1em solid rgb(10, 10, 10) ;
     border-radius: 0.3em;
+    
 }
 .cont-bt button{
     position: relative;
@@ -211,45 +224,11 @@ i {
     color: rgb(60, 157, 231);
 }
 
-@media (max-width: 768px) {
-
-    .div_logImg img {
-        width: 100%;
-        height: 60%;
-        padding: 0.3em;
-    }
-
-    .div_cont_delete p {
-        font-size: 1.3rem;
-        
-    }
-   
-}
-
-
-@media (max-width: 480px) {
-    .caixa-itens {
-        max-width: 110px;
-        text-align: center;
-        gap: 0.4em;
-
-    }
-
-    .div_logImg img {
-        width: 100%;
-        height: 60%;
-        padding: 0.3em;
-    }
-    .soma-total .cont-total{
-        width: 22em;
-    }
-    
-   
-}
 /*  Bebidas  */
 
 .bebidas_{
     display:flex;
+    justify-content: center;
     flex-wrap:wrap;
     gap: 0.3em;
 }
@@ -270,6 +249,7 @@ i {
 .itens_bebidas img{
     width: 100%;
     padding: 0.3em;
+    cursor: pointer;
 }
 
 
@@ -280,5 +260,44 @@ i {
 
 
 
+@media (max-width: 768px) {
 
+    .div_logImg img {
+        width: 100%;
+        height: 60%;
+        padding: 0.3em;
+    }
 
+    .div_cont_delete p {
+        font-size: 1.3rem;
+        
+    }
+   
+    .itens_bebidas{
+        width: 100px;
+        height:auto;
+        border: 1px solid red;
+        align-content: end;
+       
+}
+}
+
+@media (max-width: 480px) {
+    .caixa-itens {
+        max-width: 110px;
+        text-align: center;
+        gap: 0.4em;
+
+    }
+
+    .div_logImg img {
+        width: 100%;
+        height: 60%;
+        padding: 0.3em;
+    }
+    .soma-total .cont-total{
+        width: 22em;
+    }
+  
+   
+}

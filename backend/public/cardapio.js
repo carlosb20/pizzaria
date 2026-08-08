@@ -60,11 +60,36 @@ class Carrinho {
 
     }
 
+    // 
     async pegaBebidas(valor) {
         const resposta = await fetch('https://pizzaria-fxkv.onrender.com/api/pizzas');
         const dados = await resposta.json();
         return dados[valor]
     }
+
+    // adicionar bebida no carrinho
+    async addToCartbedidas() {
+        const respostas = await fetch("https://pizzaria-fxkv.onrender.com/api/pizzas");
+        const dados_ = await respostas.json();
+        const ca = document.querySelectorAll('.itens_bebidas')
+
+        ca.forEach((caixa, index) => {
+            caixa.addEventListener('click', () => {
+                console.log('ok')
+                const produto = dados_.refrigerantes[index]
+                const existe = this.produtos.find(p => p.id === produto.id);
+
+                if (!existe) {
+                    this.produtos.push({ ...produto, quant: 1 });
+                }
+                this.numeroPedidos()
+                console.log(this.produtos)
+            });
+        });
+        
+    }
+
+        
 
     async getBebidas() {
         console.log('bebidas')
@@ -97,19 +122,12 @@ class Carrinho {
             itens_bebidas.appendChild(contbebidas)
             bebidas_.appendChild(itens_bebidas)
 
-            img_bebidas.addEventListener('click', () => {
-
-                const divPai = img_bebidas.parentElement;
-                console.log(divPai.childNodes[1]);
-            })
         })
 
         this.section.appendChild(bebidas_)
 
-
-
     }
-
+    // adicionar pizza no carrinho
     async addToCart() {
         const respostas = await fetch("https://pizzaria-fxkv.onrender.com/api/pizzas");
         const dados_ = await respostas.json();
@@ -129,7 +147,7 @@ class Carrinho {
             });
         });
     }
-
+    // adiciona quantidade de produto
     numeroPedidos() {
 
         if (this.produtos.length > 0) {
@@ -183,6 +201,7 @@ class Carrinho {
             this.checkPedidos()
         })
     }
+    //Renderiza a interface do carrinho de compras desenhando os produtos no DOM
     checkPedidos() {
 
         this.produtosCarrinho.innerHTML = '';
@@ -190,6 +209,7 @@ class Carrinho {
 
             const divPedidos = document.createElement("div")
             divPedidos.setAttribute("class", "cont-pedidos")
+            
 
             const div_logImg = document.createElement("div")
             div_logImg.setAttribute("class", "div_logImg")
@@ -306,6 +326,7 @@ p.openCard()
 p.addToCart()
 
 p.getBebidas()
+p.addToCartbedidas()
 
 
 
